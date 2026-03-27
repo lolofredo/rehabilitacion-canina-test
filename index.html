@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ============================================================
+       META & SEO
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- TODO: Actualizar title y description con keywords finales -->
+  <title>Rehabilitación Canina Chile | Kinesiología y Fisioterapia Canina Online</title>
+  <meta name="description" content="Kinesiología y Fisioterapia Canina online para mejorar la movilidad y calidad de vida de tu perro. Programas personalizados con respaldo profesional. Chile." />
+
+  <!-- Canonical: actualizar con dominio real -->
+  <!-- <link rel="canonical" href="https://www.rehabilitacioncanina.cl/" /> -->
+
+  <!-- Open Graph básico -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rehabilitación Canina Chile | Kinesiología y Fisioterapia Canina Online" />
+  <meta property="og:description" content="Programas de rehabilitación canina online para perros con problemas de movilidad. Plan personalizado + videos + seguimiento profesional." />
+  <meta property="og:url" content="https://www.rehabilitacioncanina.cl/" />
+  <!-- TODO: reemplazar con imagen OG real (1200x630px) -->
+  <meta property="og:image" content="https://www.rehabilitacioncanina.cl/assets/og-image.jpg" />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="og:site_name" content="Rehabilitación Canina Chile" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rehabilitación Canina Chile" />
+  <meta name="twitter:description" content="Kinesiología y Fisioterapia Canina online para mejorar la movilidad de tu perro." />
+
+  <!-- Favicon (TODO: reemplazar con favicon real) -->
+  <!-- <link rel="icon" href="/assets/favicon.ico" /> -->
+
+  <!-- ============================================================
+       GOOGLE TAG MANAGER — TODO: reemplazar GTM-XXXXXXX con ID real
+       ============================================================ -->
+  <!--
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  -->
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!--
+  ================================================================
+  ARQUITECTURA DE ESCALABILIDAD — PARA MANTENER EN 6 MESES
+  ================================================================
+  Esta es una landing 1-pager, pero preparada para crecer:
+
+  Futuras páginas recomendadas:
+    /como-funciona        → expandir sección #como-funciona
+    /problemas-de-movilidad → expandir sección #para-quien
+    /rehabilitacion-canina-online → home SEO alternativo
+    /agenda               → página de booking (Calendly, Cal.com, etc.)
+
+  Para convertir a multi-page:
+    1. Crear nueva carpeta por slug (ej: /como-funciona/index.html)
+    2. Copiar header/footer como includes (o usar un SSG como Eleventy)
+    3. Mantener styles.css compartido
+    4. Separar JS modular si crece (main.js → modules/nav.js, modules/forms.js, etc.)
+  ================================================================
+  -->
+</head>
+
+<body>
+
+  <!-- GTM noscript (TODO: activar con ID real) -->
+  <!--
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  -->
+
+  <!-- ============================================================
+       BARRA DE ANUNCIO — MENSAJE BAJO HEADER
+       ============================================================ -->
+  <div class="announcement-bar" role="banner" aria-label="Anuncio principal">
+    <p>Kinesiología y Fisioterapia Canina para mejorar la movilidad y la calidad de vida de tu perro, <strong>desde casa y con ejercicios progresivos.</strong></p>
+  </div>
+
+  <!-- ============================================================
+       HEADER STICKY
+       ============================================================ -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header__inner">
+
+      <!-- Hamburguesa (solo visible en mobile) -->
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="main-nav"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Logo -->
+      <a href="/" class="header__logo" aria-label="Ir al inicio de Rehabilitación Canina Chile">
+        <!-- TODO: reemplazar src con ruta real de logo -->
+        <!-- <img src="assets/logo.png" alt="Rehabilitación Canina Chile" width="160" height="48" /> -->
+        <span class="logo-text">Rehabilitación<br /><strong>Canina Chile</strong></span>
+      </a>
+
+      <!-- Navegación principal -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav__list" role="list">
+          <li><a class="nav__link" href="#como-funciona">Cómo funciona</a></li>
+          <li><a class="nav__link" href="#para-quien">Para quién es</a></li>
+          <li><a class="nav__link" href="#resultados">Resultados esperables</a></li>
+          <li><a class="nav__link" href="#planes">Planes</a></li>
+          <li><a class="nav__link" href="#faq">Preguntas frecuentes</a></li>
+          <li><a class="nav__link" href="#historia">Por qué existe</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA header -->
+      <!-- TODO: reemplazar href con enlace real de agenda (Calendly, Cal.com, etc.) -->
+      <a
+        href="https://calendly.com/rehab-canina-chile/evaluacion-inicial"
+        class="btn btn--primary header__cta"
+        aria-label="Agenda tu sesión de evaluación"
+      >
+        Agenda tu sesión
+      </a>
+
+    </div>
+  </header>
+
+  <!-- Overlay para menú mobile -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content">
+
+    <!-- ===========================================================
+         1. HERO
+         =========================================================== -->
+    <section class="section section--hero hero" id="inicio" aria-labelledby="hero-title">
+
+      <!-- TODO: reemplazar con imagen real de hero (perro, dueño, etc.) -->
+      <!-- Sugerencia de imagen: perro recuperándose, dueño trabajando con él en casa -->
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <div class="hero__text">
+          <span class="hero__eyebrow">Rehabilitación Canina Online · Chile</span>
+          <h1 class="hero__title" id="hero-title">
+            Tu perro puede<br />
+            <em>recuperar movilidad.</em>
+          </h1>
+          <p class="hero__subtitle">
+            Kinesiología y Fisioterapia Canina para mejorar la movilidad y la calidad de vida de tu perro, desde casa y con ejercicios progresivos.
+          </p>
+          <p class="hero__body">
+            Su historia no tiene por qué quedar limitada por una condición.
+          </p>
+
+          <div class="hero__actions">
+            <!-- TODO: reemplazar href con enlace de agenda real -->
+            <a href="https://calendly.com/rehab-canina-chile/evaluacion-inicial" class="btn btn--primary btn--lg">
+              Agenda tu evaluación inicial
+            </a>
+            <a href="#como-funciona" class="btn btn--ghost btn--lg">
+              Ver cómo funciona
+            </a>
+          </div>
+        </div>
+
+        <!-- Espacio reservado para imagen hero en desktop -->
+<div class="hero__image-wrap">
+  <div class="hero__media-card">
+    <video
+      class="hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="assets/img/hero-lucas-poster.jpg"
+      aria-label="Lucas en proceso de rehabilitación canina"
+    >
+      <source src="assets/video/hero-lucas.mp4" type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         2. CÓMO FUNCIONA
+         =========================================================== -->
+    <section class="section section--alt" id="como-funciona" aria-labelledby="como-title">
+      <div class="container">
+
+        <div class="section-header">
+          <h2 class="section-title" id="como-title">Cómo funciona</h2>
+          <p class="section-subtitle">Todo se hace en modalidad <strong>online</strong>, desde casa, de forma clara, progresiva y adaptada a cada perro.</p>
+        </div>
+
+        <ol class="steps-list" role="list">
+          <li class="step-item">
+            <div class="step-number" aria-hidden="true">01</div>
+            <div class="step-content">
+              <h3 class="step-title">Agenda tu evaluación inicial</h3>
+              <p class="step-desc">Sesión de <strong>45 a 60 minutos</strong> por videollamada para conocer a tu perro, evaluar su condición actual y entender su historia clínica.</p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-number" aria-hidden="true">02</div>
+            <div class="step-content">
+              <h3 class="step-title">Diagnóstico previo o derivación veterinaria</h3>
+              <p class="step-desc">Si tu perro aún no tiene diagnóstico, <strong>te orientamos y derivamos</strong> al veterinario adecuado antes de comenzar el programa.</p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-number" aria-hidden="true">03</div>
+            <div class="step-content">
+              <h3 class="step-title">Plan personalizado + pauta de ejercicios (videos) + seguimiento</h3>
+              <p class="step-desc">Recibes un <strong>plan de ejercicios progresivos</strong> con videos explicativos y acceso a biblioteca de ejercicios. Seguimiento semanal durante <strong>6 semanas</strong>.</p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-number" aria-hidden="true">04</div>
+            <div class="step-content">
+              <h3 class="step-title">Revisión de progresos y ajuste del plan</h3>
+              <p class="step-desc">Revisamos los avances, ajustamos el programa según la evolución y definimos los próximos pasos para <strong>seguir progresando.</strong></p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="service-note" role="note">
+          <p><strong>Servicio online de acompañamiento funcional y ejercicio terapéutico</strong> para perros con diagnóstico veterinario previo, complementario al trabajo veterinario. No reemplaza la evaluación ni el seguimiento médico veterinario.</p>
+        </div>
+
+        <div class="section-cta-wrap">
+          <!-- TODO: reemplazar href con enlace de agenda real -->
+          <a href="https://calendly.com/rehab-canina-chile/evaluacion-inicial" class="btn btn--primary">Quiero empezar</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         3. PARA QUIÉN ES
+         =========================================================== -->
+    <section class="section" id="para-quien" aria-labelledby="para-quien-title">
+      <div class="container">
+
+        <div class="section-header">
+          <h2 class="section-title" id="para-quien-title">¿En qué casos la rehabilitación es necesaria?</h2>
+          <p class="section-subtitle">Si tu perro presenta alguno de estos signos, la rehabilitación puede marcar la diferencia.</p>
+        </div>
+
+        <ul class="conditions-grid" role="list">
+          <li class="condition-card">
+            <span class="condition-icon" aria-hidden="true">
+              <!-- Icono SVG inline: limitación de movimiento -->
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <circle cx="20" cy="20" r="18" stroke="var(--color-primary-500)" stroke-width="2"/>
+                <path d="M13 20h14M20 13v14" stroke="var(--color-primary-500)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3 class="condition-title">Pérdida de movilidad</h3>
+            <p class="condition-desc">Dificultad para levantarse, caminar distancias cortas o moverse con normalidad.</p>
+          </li>
+
+          <li class="condition-card">
+            <span class="condition-icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <path d="M8 28 Q14 14 20 20 Q26 26 32 12" stroke="var(--color-primary-500)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              </svg>
+            </span>
+            <h3 class="condition-title">Debilidad e inestabilidad en la marcha</h3>
+            <p class="condition-desc">Tambaleo, caídas frecuentes, dificultad para mantener el equilibrio al caminar.</p>
+          </li>
+
+          <li class="condition-card">
+            <span class="condition-icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <path d="M10 32 L20 10 L30 32" stroke="var(--color-primary-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M14 24 h12" stroke="var(--color-primary-500)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3 class="condition-title">Pérdida de función en patas traseras</h3>
+            <p class="condition-desc">Arrastre de patas, paresia o parálisis parcial en el tren posterior.</p>
+          </li>
+
+          <li class="condition-card">
+            <span class="condition-icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <path d="M20 8 v10 M20 22 v2" stroke="var(--color-primary-500)" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="20" cy="27" r="2" fill="var(--color-primary-500)"/>
+                <circle cx="20" cy="20" r="16" stroke="var(--color-primary-500)" stroke-width="2"/>
+              </svg>
+            </span>
+            <h3 class="condition-title">Rehabilitación post-quirúrgica</h3>
+            <p class="condition-desc">Recuperación funcional después de cirugías como TPLO, hemilaminectomía u otras.</p>
+          </li>
+        </ul>
+
+        <!-- Aviso de derivación y alcance del servicio -->
+        <div class="diagnosis-notice" role="note">
+          <span class="diagnosis-notice__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <circle cx="11" cy="11" r="10" stroke="var(--color-primary-300)" stroke-width="1.5"/>
+              <path d="M7 11.5l3 3 5-6" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div>
+            <p><strong>¿Tu perro no tiene diagnóstico veterinario aún?</strong> No es un problema para orientarte. En la evaluación inicial revisamos el caso y, si hace falta, te ayudamos a derivarlo antes de comenzar el programa.</p>
+            <p class="diagnosis-notice__legal">No realizo diagnóstico médico veterinario ni indico medicación. Mi trabajo complementa la evaluación y el diagnóstico veterinario previo, centrándose en el acompañamiento funcional y el ejercicio terapéutico.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         4. RESULTADOS ESPERABLES
+         =========================================================== -->
+    <section class="section section--alt" id="resultados" aria-labelledby="resultados-title">
+      <div class="container">
+
+        <div class="section-header">
+          <h2 class="section-title" id="resultados-title">Mejoras en su calidad de vida,<br class="hide-mobile" /> a través de</h2>
+          <p class="section-subtitle">Con un programa progresivo y constante, los resultados son medibles y sostenibles en el tiempo.</p>
+        </div>
+
+        <ul class="results-list" role="list">
+          <li class="result-item">
+            <span class="result-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M4 16 Q10 6 16 16 Q22 26 28 16" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="result-title">Marcha más segura y estable</h3>
+              <p class="result-desc">Ejercicios específicos para mejorar el control motor, el equilibrio y la confianza al caminar.</p>
+            </div>
+          </li>
+
+          <li class="result-item">
+            <span class="result-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="13" stroke="var(--color-accent)" stroke-width="2"/>
+                <path d="M10 16l4 4 8-8" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="result-title">Reducir caídas y arrastre de patas</h3>
+              <p class="result-desc">Trabajo de propiocepción y fortalecimiento para disminuir episodios de inestabilidad.</p>
+            </div>
+          </li>
+
+          <li class="result-item">
+            <span class="result-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M8 24 L16 8 L24 24" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M11 19 h10" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="result-title">Mayor movilidad funcional</h3>
+              <p class="result-desc">Recuperar la capacidad de moverse con autonomía para actividades cotidianas simples.</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Bloque de testimonios (preparado para cuando haya testimonios reales) -->
+        <!--
+        <div class="testimonials-section" id="testimonios">
+          <h3>Lo que dicen quienes ya pasaron por el proceso</h3>
+          TODO: Agregar tarjetas de testimonios aquí con:
+          - foto del perro (opcional)
+          - nombre del perro y raza
+          - testimonio del dueño
+          - resultado obtenido
+          Ejemplo de estructura:
+          <blockquote class="testimonial-card">
+            <p>"..."</p>
+            <footer><cite>Nombre, dueño de [nombre del perro], [raza]</cite></footer>
+          </blockquote>
+        </div>
+        -->
+
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         5. PLANES Y PRECIOS
+         =========================================================== -->
+    <section class="section" id="planes" aria-labelledby="planes-title">
+      <div class="container">
+
+        <div class="section-header">
+          <h2 class="section-title" id="planes-title">Programas de Rehabilitación</h2>
+          <p class="section-subtitle">Elige el plan que se adapta a la etapa actual de tu perro.</p>
+        </div>
+
+<div class="pricing-note" role="note">
+  <p>
+    <strong>La evaluación inicial es siempre el primer paso.</strong>
+    A partir de esa sesión definimos si tu perro necesita un programa de rehabilitación,
+    una pauta de mantenimiento o una sesión de seguimiento puntual.
+  </p>
+</div>
+
+        <div class="plans-grid">
+
+          <!-- Plan 1: Evaluación inicial -->
+          <article class="plan-card" aria-labelledby="plan-eval-title">
+            <div class="plan-card__header">
+              <h3 class="plan-card__title" id="plan-eval-title">Evaluación Inicial</h3>
+              <div class="plan-card__price">
+                <span class="price-amount">$45.000</span>
+                <span class="price-currency">CLP</span>
+              </div>
+            </div>
+            <ul class="plan-card__features" role="list">
+              <li>Evaluación, valoración y análisis funcional del movimiento y condición actual</li>
+              <li>Definición de objetivos en conjunto con el tutor</li>
+              <li>Orientación sobre próximos pasos</li>
+              <li>Pauta de ejercicios genéricos</li>
+
+            </ul>
+            <!-- TODO: reemplazar href con enlace real de WhatsApp o agenda para este plan -->
+            <a href="https://calendly.com/rehab-canina-chile/evaluacion-inicial" class="btn btn--outline plan-card__cta">Agendar ahora</a>
+          </article>
+
+          <!-- Plan 2: Programa 4 semanas (destacado) -->
+          <article class="plan-card plan-card--featured" aria-labelledby="plan-6s-title">
+            <div class="plan-card__badge">RECOMENDADO</div>
+            <div class="plan-card__header">
+              <h3 class="plan-card__title" id="plan-6s-title">Programa Inicial de 4 Semanas</h3>
+              <div class="plan-card__price">
+                <span class="price-amount">$200.000</span>
+                <span class="price-currency">CLP</span>
+              </div>
+            </div>
+            <ul class="plan-card__features" role="list">
+              <li>Incluye sesión de evaluación inicial</li>
+              <li>Plan de ejercicios personalizado</li>
+              <li>Acceso a biblioteca de videos</li>
+              <li>Sesiones de control a las semanas 2 y 4</li>
+              <li>Ajustes continuos del plan según evolución</li>
+              <li>Soporte vía WhatsApp durante todo el programa</li>
+            </ul>
+            <!-- TODO: reemplazar href con enlace real de WhatsApp o agenda para este plan -->
+            <a href="https://calendly.com/rehab-canina-chile/evaluacion-inicial" class="btn btn--primary plan-card__cta">Comenzar programa</a>
+          </article>
+
+
+
+          <!-- Plan 4: Segundo programa -->
+          <article class="plan-card" aria-labelledby="plan-2p-title">
+            <div class="plan-card__header">
+              <h3 class="plan-card__title" id="plan-2p-title">Programa de Mantenimiento 4 Semanas
+</h3>
+              <div class="plan-card__price">
+                <span class="price-amount">$150.000</span>
+                <span class="price-currency">CLP</span>
+              </div>
+            </div>
+            <ul class="plan-card__features" role="list">
+              <li>Sesión inicial de reevaluación</li>
+              <li>Plan de ejercicios de mantenimiento</li>
+              <li>Ajustes según respuesta y progreso</li>
+              <li>Soporte vía WhatsApp durante todo el programa</li>
+              <li>Sesiones de control a las semanas 2 y 4</li>
+            </ul>
+            <!-- TODO: reemplazar href con enlace real de WhatsApp o agenda para este plan -->
+            <a href="https://calendly.com/rehab-canina-chile/evaluacion-inicial" class="btn btn--outline plan-card__cta">Continuar proceso</a>
+          </article>
+
+          <!-- Plan 3: Sesión seguimiento post programa -->
+          <article class="plan-card" aria-labelledby="plan-seg-title">
+            <div class="plan-card__header">
+              <h3 class="plan-card__title" id="plan-seg-title">Sesión de Seguimiento</h3>
+              <div class="plan-card__price">
+                <span class="price-amount">$40.000</span>
+                <span class="price-currency">CLP</span>
+              </div>
+            </div>
+            <ul class="plan-card__features" role="list">
+              <li>Sesión de control y reevaluación</li>
+              <li>Revisión de progreso</li>
+              <li>Ajuste del plan actual</li>
+              <li>Recomendaciones para continuar</li>
+            </ul>
+            <!-- TODO: reemplazar href con enlace real de WhatsApp o agenda para este plan -->
+            <a href="https://calendly.com/rehab-canina-chile/evaluacion-inicial" class="btn btn--outline plan-card__cta">Agendar sesión</a>
+          </article>
+
+        </div>
+
+        <p class="plans-note">¿Tienes dudas sobre qué plan es el más adecuado para tu perro? <a href="https://wa.me/56983297826?text=Hola%2C%20quiero%20consultar%20sobre%20los%20planes%20de%20rehabilitaci%C3%B3n%20para%20mi%20perro" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a> y te ayudamos a decidir.</p>
+
+        <div class="service-note service-note--plans" role="note">
+          <p>Todos los planes se realizan en <strong>modalidad 100% online</strong> mediante videollamada. El servicio es de acompañamiento funcional y ejercicio terapéutico, complementario al trabajo veterinario. No reemplaza la consulta, el diagnóstico ni el tratamiento médico veterinario. Se requiere diagnóstico veterinario previo para iniciar el programa de ejercicios.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ===========================================================
+         6. FAQ — PREGUNTAS FRECUENTES
+         =========================================================== -->
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+
+        <div class="section-header">
+          <h2 class="section-title" id="faq-title">Preguntas frecuentes</h2>
+          <p class="section-subtitle">Todo lo que necesitas saber antes de agendar una evaluación inicial.</p>
+        </div>
+
+        <dl class="faq-list" id="faq-list">
+          <div class="faq-item" id="faq-1">
+            <dt>
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                ¿Necesito diagnóstico veterinario previo?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-1" hidden>
+              <p>Sí. El programa de ejercicios terapéuticos se construye sobre la base de un diagnóstico veterinario previo. Eso permite trabajar de forma segura, progresiva y adaptada a la condición específica de tu perro.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item" id="faq-2">
+            <dt>
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                ¿Qué incluye la evaluación inicial?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-2" hidden>
+              <p>Incluye una videollamada de 45 a 60 minutos, revisión del historial clínico disponible, análisis funcional del movimiento, orientación sobre los siguientes pasos y recomendación del plan más adecuado para tu caso.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item" id="faq-3">
+            <dt>
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                ¿Cómo se realiza el servicio?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-3" hidden>
+              <p>El servicio es 100% online. Las sesiones se realizan por videollamada, los planes se entregan de forma digital y el seguimiento se hace a distancia, apoyado con videos y ajustes según la evolución de tu perro.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item" id="faq-4">
+            <dt>
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                ¿Qué pasa si mi perro no tiene diagnóstico?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-4" hidden>
+              <p>Puedes agendar la evaluación inicial igualmente. En esa sesión revisamos el caso y, si hace falta, te orientamos y derivamos al especialista veterinario adecuado antes de iniciar el programa de ejercicios.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item" id="faq-5">
+            <dt>
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                ¿Puedo reprogramar una sesión?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-5" hidden>
+              <p>Sí. Si necesitas cambiar una sesión, contáctanos con al menos 24 horas de anticipación y haremos lo posible por reagendar según disponibilidad.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item" id="faq-6">
+            <dt>
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                ¿Qué pasa si mi perro empeora?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-6" hidden>
+              <p>Ante cualquier signo de empeoramiento, la indicación siempre es contactar al veterinario tratante. El programa se pausa y solo se ajusta o retoma con la orientación correspondiente.</p>
+            </dd>
+          </div>
+        </dl>
+
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         7. POR QUÉ EXISTE REHABILITACIÓN CANINA CHILE
+         =========================================================== -->
+    <section class="section section--story section--alt" id="historia" aria-labelledby="historia-title">
+      <div class="container">
+
+        <div class="story__grid">
+
+          <!-- Imagen / avatar -->
+          <div class="story__image-col" aria-hidden="true">
+            <div class="story__image-wrap">
+              <!-- TODO: reemplazar con foto real de Juan y/o Lucas -->
+              <!-- <img src="assets/juan-y-lucas.jpg" alt="Juan Pinto, kinesiólogo, junto a su perro Lucas" class="story__photo" /> -->
+              <div class="story__photo-placeholder">
+                <span aria-hidden="true">🐕</span>
+                <p>[ Foto de Juan y Lucas ]</p>
+              </div>
+              <div class="story__accent-card">
+                <p class="story__accent-name">Juan Pinto</p>
+                <p class="story__accent-role">Kinesiólogo · Especialista en Neurología</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Texto -->
+          <div class="story__text-col">
+            <h2 class="section-title story__title" id="historia-title">
+              Por qué existe<br /><em>Rehabilitación Canina Chile</em>
+            </h2>
+
+            <div class="story__body">
+              <p>Mi nombre es <strong>Juan Pinto</strong>, y soy kinesiólogo especializado en patologías neurológicas. Mi perro se llama Lucas, y es un Bulldog Francés.</p>
+
+              <p>En Marzo de 2024, le diagnosticaron una lesión medular progresiva, y nos dijeron que luego de un par de meses, perdería por completo la movilidad de sus patas traseras.</p>
+
+              <blockquote class="story__quote">
+                <p>Pero no acepté esa idea.</p>
+              </blockquote>
+
+              <p>Empecé a adaptar principios de rehabilitación neurológica humana a protocolos de ejercicio terapéutico canino. Y con ejercicios simples, progresivos y constantes, <strong>Lucas recuperó movilidad</strong>, y lo más importante, funcionalidad y <strong>calidad de vida</strong>.</p>
+
+              <p>Eso cambió mi visión para siempre. Así nace Rehabilitación Canina Chile, para ayudar a más perros a recuperar funcionalidad <strong>desde casa y con modalidad online</strong>, con programas claros y con respaldo profesional, sin depender de intervenciones invasivas o equipamiento complejo.</p>
+
+              <p>Mi trabajo hoy se enfoca en el <strong>acompañamiento funcional y el ejercicio terapéutico online</strong> para perros, siempre como complemento al diagnóstico veterinario previo y en coordinación con el equipo veterinario tratante.</p>
+
+              <p class="story__closing">
+                Porque no se trata de la cantidad de vida…<br />
+                <strong>se trata de la calidad de vida.</strong>
+              </p>
+            </div>
+
+            <div class="story__cta-wrap">
+              <!-- TODO: reemplazar href con enlace de agenda real -->
+              <a href="https://calendly.com/rehab-canina-chile/evaluacion-inicial" class="btn btn--primary">Agenda la evaluación inicial</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         SECCIÓN AGENDA / CTA FINAL
+         (placeholder preparado para integrar Calendly, Cal.com, etc.)
+         =========================================================== -->
+    <section class="section section--cta-final" id="agenda" aria-labelledby="agenda-title">
+      <div class="container">
+        <div class="cta-final__content">
+          <h2 class="cta-final__title" id="agenda-title">¿Listo para dar el primer paso?</h2>
+          <p class="cta-final__desc">Agenda la evaluación inicial y empecemos a trabajar juntos en la recuperación funcional de tu perro.</p>
+
+          <p class="cta-final__clarification">El servicio es de <strong>acompañamiento funcional y ejercicio terapéutico online</strong>, complementario al trabajo veterinario. Requiere diagnóstico veterinario previo.</p>
+
+          <div class="cta-final__actions">
+            <!--
+            TODO: Dos opciones para integrar agenda:
+            1. Calendly embebido: <div class="calendly-inline-widget" data-url="https://calendly.com/tu-usuario/evaluacion-inicial"></div>
+            2. Botón directo a Calendly / Cal.com / WhatsApp
+            -->
+            <a
+              href="https://wa.me/56983297826?text=Hola%2C%20quiero%20agendar%20mi%20evaluaci%C3%B3n%20inicial%20para%20mi%20perro"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--primary btn--lg"
+            >
+              Agendar por WhatsApp
+            </a>
+            <a href="mailto:rehab.canina.chile@gmail.com" class="btn btn--ghost btn--lg">
+              Enviar un correo
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="/" class="footer__logo-link" aria-label="Inicio">
+          <!-- TODO: reemplazar con logo real -->
+          <span class="logo-text logo-text--footer">Rehabilitación<br /><strong>Canina Chile</strong></span>
+        </a>
+        <p class="footer__tagline">Kinesiología y Fisioterapia Canina Online para mejorar la movilidad y calidad de vida de tu perro.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navegación del footer">
+        <h3 class="footer__nav-title">Rehabilitación Canina</h3>
+        <ul class="footer__nav-list" role="list">
+          <li><a href="#como-funciona" class="footer__nav-link">Cómo funciona</a></li>
+          <li><a href="#para-quien" class="footer__nav-link">Para quién es</a></li>
+          <li><a href="#resultados" class="footer__nav-link">Resultados esperables</a></li>
+          <li><a href="#planes" class="footer__nav-link">Planes</a></li>
+          <li><a href="#faq" class="footer__nav-link">Preguntas frecuentes</a></li>
+          <li><a href="#historia" class="footer__nav-link">Por qué existe Rehabilitación Canina Chile</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__nav footer__legal-nav" aria-label="Información legal">
+        <h3 class="footer__nav-title">Legal</h3>
+        <ul class="footer__nav-list" role="list">
+          <li><a href="politica-de-privacidad.html" class="footer__nav-link">Política de Privacidad</a></li>
+          <li><a href="terminos-y-condiciones.html" class="footer__nav-link">Términos y Condiciones</a></li>
+          <li><a href="aviso-importante.html" class="footer__nav-link">Aviso Importante</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__contact">
+        <h3 class="footer__nav-title">Contacto</h3>
+        <ul class="footer__contact-list" role="list">
+          <li>
+            <a href="mailto:rehab.canina.chile@gmail.com" class="footer__contact-link">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M2 6l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              rehab.canina.chile@gmail.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/56983297826?text=Hola%2C%20me%20interesa%20la%20rehabilitaci%C3%B3n%20canina%20para%20mi%20perro"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__contact-link"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 1.32.36 2.58.99 3.66L1.5 16.5l3.96-1.02A7.46 7.46 0 009 16.5c4.14 0 7.5-3.36 7.5-7.5S13.14 1.5 9 1.5z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6.5 8.5s.5 1.5 2 2.5 2.5.5 2.5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              +56 9 8329 7826
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p class="footer__copy">© <span id="footer-year"></span> Rehabilitación Canina Chile. Todos los derechos reservados.</p>
+        <div class="footer__bottom-links">
+          <a href="politica-de-privacidad.html" class="footer__bottom-link">Política de Privacidad</a>
+          <a href="terminos-y-condiciones.html" class="footer__bottom-link">Términos y Condiciones</a>
+          <a href="aviso-importante.html" class="footer__bottom-link">Aviso Importante</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BOTÓN FLOTANTE DE WHATSAPP
+       ============================================================ -->
+  <a
+    href="https://wa.me/56983297826?text=Hola%2C%20me%20interesa%20la%20rehabilitaci%C3%B3n%20canina%20para%20mi%20perro"
+    class="whatsapp-fab"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+    title="Escríbenos por WhatsApp"
+  >
+    <!-- WhatsApp SVG inline -->
+    <svg
+      class="whatsapp-fab__icon"
+      viewBox="0 0 32 32"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M16 2C8.268 2 2 8.268 2 16c0 2.45.641 4.748 1.762 6.74L2 30l7.504-1.97A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5c-2.182 0-4.228-.596-5.983-1.633l-.43-.254-4.452 1.168 1.19-4.339-.28-.445A11.454 11.454 0 014.5 16C4.5 9.649 9.649 4.5 16 4.5S27.5 9.649 27.5 16 22.351 27.5 16 27.5zm6.29-8.567c-.345-.173-2.043-1.008-2.359-1.123-.317-.115-.548-.173-.778.173-.23.346-.893 1.123-1.095 1.354-.201.23-.403.259-.748.086-.345-.173-1.457-.537-2.775-1.713-1.026-.916-1.718-2.047-1.92-2.392-.202-.346-.021-.532.151-.704.155-.155.345-.403.518-.605.172-.201.23-.345.345-.576.115-.23.058-.432-.029-.605-.086-.172-.778-1.877-1.066-2.57-.281-.675-.566-.583-.778-.594L10.5 10c-.23 0-.605.087-.921.433-.317.346-1.21 1.18-1.21 2.877 0 1.698 1.238 3.338 1.41 3.568.173.23 2.437 3.72 5.904 5.215.826.357 1.47.57 1.972.729.829.264 1.583.227 2.18.138.665-.1 2.043-.835 2.33-1.641.288-.806.288-1.498.202-1.641-.086-.144-.317-.23-.662-.404z"/>
+    </svg>
+    <span class="whatsapp-fab__label">WhatsApp</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+
+</body>
+</html>

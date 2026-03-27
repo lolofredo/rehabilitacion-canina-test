@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ============================================================
+       META & SEO
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- TODO: Actualizar title y description con keywords finales -->
+  <title>Rehabilitación Canina Chile | Kinesiología y Fisioterapia Canina Online</title>
+  <meta name="description" content="Kinesiología y Fisioterapia Canina online para mejorar la movilidad y calidad de vida de tu perro. Programas personalizados con respaldo profesional. Chile." />
+
+  <!-- Canonical: actualizar con dominio real -->
+  <!-- <link rel="canonical" href="https://www.rehabilitacioncanina.cl/" /> -->
+
+  <!-- Open Graph básico -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rehabilitación Canina Chile | Kinesiología y Fisioterapia Canina Online" />
+  <meta property="og:description" content="Programas de rehabilitación canina online para perros con problemas de movilidad. Plan personalizado + videos + seguimiento profesional." />
+  <meta property="og:url" content="https://www.rehabilitacioncanina.cl/" />
+  <!-- TODO: reemplazar con imagen OG real (1200x630px) -->
+  <meta property="og:image" content="https://www.rehabilitacioncanina.cl/assets/og-image.jpg" />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="og:site_name" content="Rehabilitación Canina Chile" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rehabilitación Canina Chile" />
+  <meta name="twitter:description" content="Kinesiología y Fisioterapia Canina online para mejorar la movilidad de tu perro." />
+
+  <!-- Favicon (TODO: reemplazar con favicon real) -->
+  <!-- <link rel="icon" href="/assets/favicon.ico" /> -->
+
+  <!-- ============================================================
+       GOOGLE TAG MANAGER — TODO: reemplazar GTM-XXXXXXX con ID real
+       ============================================================ -->
+  <!--
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  -->
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!--
+  ================================================================
+  ARQUITECTURA DE ESCALABILIDAD — PARA MANTENER EN 6 MESES
+  ================================================================
+  Esta es una landing 1-pager, pero preparada para crecer:
+
+  Futuras páginas recomendadas:
+    /como-funciona        → expandir sección #como-funciona
+    /problemas-de-movilidad → expandir sección #para-quien
+    /rehabilitacion-canina-online → home SEO alternativo
+    /agenda               → página de booking (Calendly, Cal.com, etc.)
+
+  Para convertir a multi-page:
+    1. Crear nueva carpeta por slug (ej: /como-funciona/index.html)
+    2. Copiar header/footer como includes (o usar un SSG como Eleventy)
+    3. Mantener styles.css compartido
+    4. Separar JS modular si crece (main.js → modules/nav.js, modules/forms.js, etc.)
+  ================================================================
+  -->
+</head>
+
+<body>
+
+  <!-- GTM noscript (TODO: activar con ID real) -->
+  <!--
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  -->
+
+  <!-- ============================================================
+       BARRA DE ANUNCIO — MENSAJE BAJO HEADER
+       ============================================================ -->
+  <div class="announcement-bar" role="banner" aria-label="Anuncio principal">
+    <p>Kinesiología y Fisioterapia Canina para mejorar la movilidad y la calidad de vida de tu perro, <strong>desde casa y con ejercicios progresivos.</strong></p>
+  </div>
+
+  <!-- ============================================================
+       HEADER STICKY
+       ============================================================ -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header__inner">
+
+      <!-- Hamburguesa (solo visible en mobile) -->
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="main-nav"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Logo -->
+      <a href="/" class="header__logo" aria-label="Ir al inicio de Rehabilitación Canina Chile">
+        <!-- TODO: reemplazar src con ruta real de logo -->
+        <!-- <img src="assets/logo.png" alt="Rehabilitación Canina Chile" width="160" height="48" /> -->
+        <span class="logo-text">Rehabilitación<br /><strong>Canina Chile</strong></span>
+      </a>
+
+      <!-- Navegación principal -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav__list" role="list">
+          <li><a class="nav__link" href="#como-funciona">Cómo funciona</a></li>
+          <li><a class="nav__link" href="#para-quien">Para quién es</a></li>
+          <li><a class="nav__link" href="#resultados">Resultados esperables</a></li>
+          <li><a class="nav__link" href="#planes">Planes</a></li>
+          <li><a class="nav__link" href="#faq">Preguntas frecuentes</a></li>
+          <li><a class="nav__link" href="#historia">Por qué existe</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA header -->
+      <!-- TODO: reemplazar href con enlace real de agenda (Calendly, Cal.com, etc.) -->
+      <a
+        href="https://calendly.com/rehab-canina-chile/evaluacion-inicial"
+        class="btn btn--primary header__cta"
+        aria-label="Agenda tu sesión de evaluación"
+      >
+        Agenda tu sesión
+      </a>
+
+    </div>
+  </header>
+
+  <!-- Overlay para menú mobile -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+ <main id="main-content">
+  <section class="section" style="padding: var(--space-16) 0; text-align: center;">
+    <div class="container" style="max-width: 700px;">
+      
+      <div style="font-size: 5rem; margin-bottom: var(--space-4);">❌</div>
+      <p class="section-kicker">Lo sentimos</p>
+      <h1 class="section-title">No pudimos procesar tu pago</h1>
+      
+      <p class="section-description" style="margin-bottom: var(--space-8);">
+        Hubo un problema con la transacción. No te preocupes, no se ha realizado ningún cargo y podemos intentar nuevamente.
+      </p>
+
+      <div style="text-align: left; padding: var(--space-8); background: #fff5f5; border-radius: var(--radius-lg); border: 1px solid #feb2b2; margin-bottom: var(--space-8);">
+        <h2 style="font-size: var(--text-lg); color: #9b2c2c; margin-bottom: var(--space-4);">¿Cómo podemos solucionarlo?</h2>
+        <ul class="resultados__list" style="margin-bottom: var(--space-6);">
+          <li>Verifica que tu tarjeta tenga cupo disponible o saldo.</li>
+          <li>Asegúrate de que los datos ingresados sean correctos.</li>
+          <li>Si el problema persiste, intenta con otro método de pago en el siguiente botón:</li>
+        </ul>
+
+        <a href="pago.html" class="btn btn--primary" style="display: block; text-align: center; margin-bottom: var(--space-4);">
+          Reintentar pago ahora
+        </a>
+        
+        <p style="text-align: center; font-size: var(--text-sm); color: var(--text-light);">
+          O si prefieres, <a href="https://wa.me/56951489673?text=Hola!%20Tuve%20un%20problema%20con%20el%20pago%20de%20la%20evaluación." style="color: var(--color-primary-700); text-decoration: underline;">contáctame por WhatsApp</a> para ayudarte.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer" role="contentinfo">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="/" class="footer__logo-link" aria-label="Inicio">
+          <!-- TODO: reemplazar con logo real -->
+          <span class="logo-text logo-text--footer">Rehabilitación<br /><strong>Canina Chile</strong></span>
+        </a>
+        <p class="footer__tagline">Kinesiología y Fisioterapia Canina Online para mejorar la movilidad y calidad de vida de tu perro.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navegación del footer">
+        <h3 class="footer__nav-title">Rehabilitación Canina</h3>
+        <ul class="footer__nav-list" role="list">
+          <li><a href="#como-funciona" class="footer__nav-link">Cómo funciona</a></li>
+          <li><a href="#para-quien" class="footer__nav-link">Para quién es</a></li>
+          <li><a href="#resultados" class="footer__nav-link">Resultados esperables</a></li>
+          <li><a href="#planes" class="footer__nav-link">Planes</a></li>
+          <li><a href="#faq" class="footer__nav-link">Preguntas frecuentes</a></li>
+          <li><a href="#historia" class="footer__nav-link">Por qué existe Rehabilitación Canina Chile</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__nav footer__legal-nav" aria-label="Información legal">
+        <h3 class="footer__nav-title">Legal</h3>
+        <ul class="footer__nav-list" role="list">
+          <li><a href="politica-de-privacidad.html" class="footer__nav-link">Política de Privacidad</a></li>
+          <li><a href="terminos-y-condiciones.html" class="footer__nav-link">Términos y Condiciones</a></li>
+          <li><a href="aviso-importante.html" class="footer__nav-link">Aviso Importante</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__contact">
+        <h3 class="footer__nav-title">Contacto</h3>
+        <ul class="footer__contact-list" role="list">
+          <li>
+            <a href="mailto:rehab.canina.chile@gmail.com" class="footer__contact-link">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M2 6l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              rehab.canina.chile@gmail.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/56983297826?text=Hola%2C%20me%20interesa%20la%20rehabilitaci%C3%B3n%20canina%20para%20mi%20perro"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__contact-link"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 1.32.36 2.58.99 3.66L1.5 16.5l3.96-1.02A7.46 7.46 0 009 16.5c4.14 0 7.5-3.36 7.5-7.5S13.14 1.5 9 1.5z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6.5 8.5s.5 1.5 2 2.5 2.5.5 2.5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              +56 9 8329 7826
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p class="footer__copy">© <span id="footer-year"></span> Rehabilitación Canina Chile. Todos los derechos reservados.</p>
+        <div class="footer__bottom-links">
+          <a href="politica-de-privacidad.html" class="footer__bottom-link">Política de Privacidad</a>
+          <a href="terminos-y-condiciones.html" class="footer__bottom-link">Términos y Condiciones</a>
+          <a href="aviso-importante.html" class="footer__bottom-link">Aviso Importante</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BOTÓN FLOTANTE DE WHATSAPP
+       ============================================================ -->
+  <a
+    href="https://wa.me/56983297826?text=Hola%2C%20me%20interesa%20la%20rehabilitaci%C3%B3n%20canina%20para%20mi%20perro"
+    class="whatsapp-fab"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+    title="Escríbenos por WhatsApp"
+  >
+    <!-- WhatsApp SVG inline -->
+    <svg
+      class="whatsapp-fab__icon"
+      viewBox="0 0 32 32"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M16 2C8.268 2 2 8.268 2 16c0 2.45.641 4.748 1.762 6.74L2 30l7.504-1.97A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5c-2.182 0-4.228-.596-5.983-1.633l-.43-.254-4.452 1.168 1.19-4.339-.28-.445A11.454 11.454 0 014.5 16C4.5 9.649 9.649 4.5 16 4.5S27.5 9.649 27.5 16 22.351 27.5 16 27.5zm6.29-8.567c-.345-.173-2.043-1.008-2.359-1.123-.317-.115-.548-.173-.778.173-.23.346-.893 1.123-1.095 1.354-.201.23-.403.259-.748.086-.345-.173-1.457-.537-2.775-1.713-1.026-.916-1.718-2.047-1.92-2.392-.202-.346-.021-.532.151-.704.155-.155.345-.403.518-.605.172-.201.23-.345.345-.576.115-.23.058-.432-.029-.605-.086-.172-.778-1.877-1.066-2.57-.281-.675-.566-.583-.778-.594L10.5 10c-.23 0-.605.087-.921.433-.317.346-1.21 1.18-1.21 2.877 0 1.698 1.238 3.338 1.41 3.568.173.23 2.437 3.72 5.904 5.215.826.357 1.47.57 1.972.729.829.264 1.583.227 2.18.138.665-.1 2.043-.835 2.33-1.641.288-.806.288-1.498.202-1.641-.086-.144-.317-.23-.662-.404z"/>
+    </svg>
+    <span class="whatsapp-fab__label">WhatsApp</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+
+</body>
+</html>
