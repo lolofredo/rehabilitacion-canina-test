@@ -11,6 +11,44 @@ const INTAKE_API_URL = window.location.port === '4173'
 
 let analyticsReady = false;
 
+const GA_ALLOWED_EVENT_NAMES = new Set([
+  'cta_click',
+  'cookie_analytics_accepted',
+  'cookie_analytics_rejected',
+  'faq_opened',
+  'form_step_view',
+  'intake_started',
+  'intake_progress',
+  'intake_validation_error',
+  'red_flag_detected',
+  'intake_saved',
+  'intake_api_error',
+  'intake_completed',
+  'whatsapp_opened',
+  'intake_abandoned',
+  'scroll_depth',
+  'web_vital'
+]);
+
+const GA_ALLOWED_PARAM_KEYS = new Set([
+  'event_category',
+  'form_step',
+  'has_red_flags',
+  'triage_status',
+  'error_type',
+  'invalid_fields',
+  'percent_complete',
+  'percent_scrolled',
+  'metric_name',
+  'metric_value',
+  'metric_unit',
+  'element_type',
+  'faq_id',
+  'cta_id',
+  'form_completed',
+  'highest_progress_percent'
+]);
+
 function getAnalyticsConsent() {
   try {
     return window.localStorage.getItem(ANALYTICS_CONSENT_KEY);
@@ -34,26 +72,6 @@ function loadScript(src, id) {
   script.async = true;
   script.src = src;
   document.head.appendChild(script);
-}
-
-function getAttribution() {
-  const params = new URLSearchParams(window.location.search);
-  const allowedKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-  const attribution = {
-    has_campaign_parameters: allowedKeys.some(function (key) {
-      return params.has(key);
-    })
-  };
-
-  if (document.referrer) {
-    try {
-      attribution.referrer_host = new URL(document.referrer).hostname.slice(0, 100);
-    } catch {
-      // Ignora referers que no sean URL válidas.
-    }
-  }
-
-  return attribution;
 }
 
 function enableAnalytics() {
@@ -103,12 +121,29 @@ function enableAnalytics() {
   });
   loadScript('https://www.clarity.ms/tag/' + CLARITY_PROJECT_ID, 'microsoft-clarity-script');
 
-  track('analytics_consent_granted', getAttribution());
+  track('cookie_analytics_accepted', {
+    event_category: 'cookie_consent'
+  });
 }
 
 function track(eventName, details) {
   if (!analyticsReady || typeof window.gtag !== 'function') return;
-  window.gtag('event', eventName, details || {});
+  if (!GA_ALLOWED_EVENT_NAMES.has(eventName)) return;
+
+  const safeDetails = {};
+  Object.entries(details || {}).forEach(function ([key, value]) {
+    if (!GA_ALLOWED_PARAM_KEYS.has(key)) return;
+
+    if (typeof value === 'boolean') {
+      safeDetails[key] = value;
+    } else if (typeof value === 'number' && Number.isFinite(value)) {
+      safeDetails[key] = value;
+    } else if (typeof value === 'string') {
+      safeDetails[key] = value.slice(0, 80);
+    }
+  });
+
+  window.gtag('event', eventName, safeDetails);
 }
 
 function initCookieConsent() {
@@ -133,6 +168,11 @@ function initCookieConsent() {
   });
 
   rejectButton.addEventListener('click', function () {
+    if (analyticsReady) {
+      track('cookie_analytics_rejected', {
+        event_category: 'cookie_consent'
+      });
+    }
     setAnalyticsConsent('denied');
     if (typeof window.gtag === 'function') {
       window.gtag('consent', 'update', {
@@ -255,6 +295,10 @@ function initFaq() {
         question.setAttribute('aria-expanded', 'true');
         const answer = document.getElementById(question.getAttribute('aria-controls'));
         if (answer) answer.hidden = false;
+        track('faq_opened', {
+          event_category: 'faq',
+          faq_id: question.getAttribute('aria-controls') || ''
+        });
       }
     });
   });
@@ -263,7 +307,9 @@ function initFaq() {
 function initTracking() {
   document.querySelectorAll('[data-track]').forEach(function (element) {
     element.addEventListener('click', function () {
-      track(element.dataset.track, {
+      track('cta_click', {
+        event_category: 'cta',
+        cta_id: element.dataset.track,
         element_type: element.tagName.toLowerCase()
       });
     });
@@ -601,6 +647,42 @@ function initIntakeForm() {
   const requiredControls = Array.from(form.querySelectorAll('[required]')).filter(function (control) {
     return control.type !== 'checkbox';
   });
+  const formStepFieldsets = Array.from(form.querySelectorAll('fieldset'));
+  const formStepNames = [
+    'tutor',
+    'perro',
+    'motivo_consulta',
+    'senales_alerta',
+    'antecedentes_veterinarios',
+    'movilidad_actual',
+    'dolor_energia',
+    'entorno_rutina',
+    'animo_conducta',
+    'videos',
+    'objetivo_consentimiento'
+  ];
+
+  function initFormStepTracking() {
+    if (!('IntersectionObserver' in window) || !formStepFieldsets.length) return;
+    const viewedSteps = new Set();
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        const index = formStepFieldsets.indexOf(entry.target);
+        const formStep = formStepNames[index] || 'paso_' + String(index + 1);
+        if (viewedSteps.has(formStep)) return;
+        viewedSteps.add(formStep);
+        track('form_step_view', {
+          event_category: 'form',
+          form_step: formStep
+        });
+      });
+    }, { threshold: 0.45, rootMargin: '0px 0px -10% 0px' });
+
+    formStepFieldsets.forEach(function (fieldset) {
+      observer.observe(fieldset);
+    });
+  }
 
   function initLocations() {
     const locations = window.CHILE_REGIONS_AND_COMMUNES || {};
@@ -707,6 +789,7 @@ function initIntakeForm() {
   });
 
   initLocations();
+  initFormStepTracking();
   updateRedFlagFollowup();
   updateProgress();
 
@@ -737,7 +820,7 @@ function initIntakeForm() {
     });
 
     if (redFlags.length) {
-      track('red_flag_detected', { has_red_flag: true });
+      track('red_flag_detected', { has_red_flags: true });
     }
 
     const payload = buildIntakePayload(form);
@@ -749,7 +832,10 @@ function initIntakeForm() {
         submitButton.textContent = 'Registrando solicitud…';
       }
       intakeResult = await submitIntake(payload);
-      track('intake_saved');
+      track('intake_saved', {
+        has_red_flags: payload.hasRedFlags,
+        triage_status: payload.triageStatus
+      });
     } catch (error) {
       if (redFlags.length) {
         setMessage(
@@ -761,7 +847,11 @@ function initIntakeForm() {
       } else {
         setMessage(message, 'No pudimos registrar la solicitud. Revisa que el servicio esté disponible e inténtalo nuevamente.', false);
       }
-      track('intake_api_error', { request_failed: true });
+      track('intake_api_error', {
+        error_type: 'api_request_failed',
+        has_red_flags: payload.hasRedFlags,
+        triage_status: payload.triageStatus
+      });
       return;
     } finally {
       if (submitButton) {
@@ -783,9 +873,15 @@ function initIntakeForm() {
     }
     completed = true;
     track('intake_completed', {
-      form_completed: true
+      form_completed: true,
+      has_red_flags: payload.hasRedFlags,
+      triage_status: payload.triageStatus
     });
-    track('whatsapp_opened');
+    track('whatsapp_opened', {
+      event_category: 'conversion',
+      has_red_flags: payload.hasRedFlags,
+      triage_status: payload.triageStatus
+    });
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   });
 
