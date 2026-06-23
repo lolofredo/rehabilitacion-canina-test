@@ -1,0 +1,48 @@
+alter table public.intakes
+  add column if not exists triage_status text,
+  add column if not exists has_red_flags boolean not null default false,
+  add column if not exists region text,
+  add column if not exists comuna text,
+  add column if not exists disponibilidad_semanal text,
+  add column if not exists responsable_ejercicios text,
+  add column if not exists sexo_perro text,
+  add column if not exists esterilizado text,
+  add column if not exists problema_principal text,
+  add column if not exists tipo_evolucion text,
+  add column if not exists preocupacion_principal text,
+  add column if not exists consulta_vet_red_flags text,
+  add column if not exists diagnostico_detalle text,
+  add column if not exists en_control_veterinario text,
+  add column if not exists medicamentos_actuales text,
+  add column if not exists cirugia_reciente text,
+  add column if not exists examenes_realizados text[],
+  add column if not exists nivel_movilidad text,
+  add column if not exists dificultades text[],
+  add column if not exists frecuencia_caidas text,
+  add column if not exists ayudas_asistencia text[],
+  add column if not exists dolor_percibido text,
+  add column if not exists momentos_dificultad text[],
+  add column if not exists energia_actual text,
+  add column if not exists fatiga text,
+  add column if not exists tipo_vivienda text,
+  add column if not exists tipo_piso text[],
+  add column if not exists escaleras text,
+  add column if not exists rutina_paseos text,
+  add column if not exists adaptaciones_casa text[],
+  add column if not exists vive_con_animales text,
+  add column if not exists estado_animo text,
+  add column if not exists sociabilidad_perros text,
+  add column if not exists sociabilidad_personas text,
+  add column if not exists miedos_reactividad text[],
+  add column if not exists motivadores text[],
+  add column if not exists videos_provided boolean not null default false,
+  add column if not exists videos_accesibles boolean,
+  add column if not exists objetivo_principal text,
+  add column if not exists comentario_adicional text,
+  add column if not exists raw_payload jsonb;
+
+create index if not exists intakes_triage_status_idx
+  on public.intakes (triage_status);
+
+create index if not exists intakes_has_red_flags_idx
+  on public.intakes (has_red_flags);
